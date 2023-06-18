@@ -4,9 +4,38 @@
 
 #include <iostream>
 
+#include "rbtree.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Red Black Tree!\n";
+
+    RBTree bst;
+    bst.insert(8);
+    bst.prettyPrint();
+    bst.insert(18);
+    bst.prettyPrint();
+    bst.insert(5);
+    bst.prettyPrint();
+    bst.insert(15);
+    bst.prettyPrint();
+    bst.insert(2); // my test insertion into the left-left
+    bst.prettyPrint();
+    bst.insert(7); // my test insertion into the left-right
+    bst.prettyPrint();
+
+    bst.insert(17); // causes a bug when inserting into an uncle right-left-right
+    bst.prettyPrint();
+
+    bst.insert(25); // test insertion into right-right
+    bst.prettyPrint();
+
+    bst.insert(40);
+    bst.prettyPrint();
+    bst.insert(80);
+    bst.prettyPrint();
+    bst.deleteNode(25);
+    bst.prettyPrint();
+
     std::cin.get();
 }
 
